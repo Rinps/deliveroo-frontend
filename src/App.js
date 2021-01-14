@@ -4,7 +4,6 @@ import axios from "axios";
 import Restaurant from "./components/Restaurant";
 
 function App() {
-  const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [restaurant, setRestaurant] = useState({});
 
@@ -13,7 +12,6 @@ function App() {
       "https://deliveroo-copycat.herokuapp.com/"
     );
     if (response) {
-      setData(response.data);
       setRestaurant({
         name: response.data.restaurant.name,
         description: response.data.restaurant.description,
