@@ -1,12 +1,21 @@
 import React from "react";
 import Category from "./Category";
+import Kart from "./Kart";
 
 const Restaurant = (props) => {
-  const { name, description, picture, categories } = props;
+  const { name, description, picture, categories, kart, setKart } = props;
 
-  const editCategory = (item, index) => {
+  const createCategory = (item, index) => {
     if (item.meals.length) {
-      return <Category title={item.name} meals={item.meals} key={index} />;
+      return (
+        <Category
+          title={item.name}
+          meals={item.meals}
+          key={index}
+          kart={kart}
+          setKart={setKart}
+        />
+      );
     }
   };
 
@@ -22,7 +31,10 @@ const Restaurant = (props) => {
       </div>
 
       {/* The list of every menu */}
-      {categories.map(editCategory)}
+      <div className="mealsAndKart">
+        <div className="meals">{categories.map(createCategory)}</div>
+        <Kart kart={kart} setKart={setKart} />
+      </div>
     </div>
   );
 };

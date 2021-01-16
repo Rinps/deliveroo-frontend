@@ -1,20 +1,23 @@
 import Menu from "./Menu";
 
 const Category = (props) => {
+  const { title, meals, kart, setKart } = props;
+
   const createMenu = (item, index) => {
     return (
       <Menu
         title={item.title}
-        key={item.index}
+        key={index}
         menuDescription={item.description}
         price={item.price}
         popular={item.popular}
         picture={item.picture}
+        kart={kart}
+        setKart={setKart}
       />
     );
   };
 
-  const { title, meals } = props;
   return (
     <div className="Category">
       <h2>{title}</h2>

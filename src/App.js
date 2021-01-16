@@ -6,6 +6,7 @@ import Restaurant from "./components/Restaurant";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [restaurant, setRestaurant] = useState({});
+  const [kart, setKart] = useState([]);
 
   const fetchData = async () => {
     const response = await axios.get(
@@ -48,16 +49,20 @@ function App() {
       </header>
 
       {/* Now the component with the restaurant description */}
-      {isLoading ? (
-        <span>Loading...</span>
-      ) : (
-        <Restaurant
-          name={restaurant.name}
-          description={restaurant.description}
-          picture={restaurant.picture}
-          categories={restaurant.categories}
-        />
-      )}
+      <div>
+        {isLoading ? (
+          <span>Loading...</span>
+        ) : (
+          <Restaurant
+            name={restaurant.name}
+            description={restaurant.description}
+            picture={restaurant.picture}
+            categories={restaurant.categories}
+            kart={kart}
+            setKart={setKart}
+          />
+        )}
+      </div>
     </div>
   );
 }
