@@ -1,7 +1,11 @@
+// Load packages
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faEnvelope, faKey, faStar } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import Restaurant from "./components/Restaurant";
+library.add(faEnvelope, faKey, faStar);
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);

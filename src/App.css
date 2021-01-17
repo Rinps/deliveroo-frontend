@@ -80,13 +80,13 @@ h3 {
 .mealsAndKart {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-around;
   margin: 20px auto;
-  width: 75%;
+  width: 80%;
 }
 
 .meals {
-  width: 70%;
+  width: 930px;
   margin: 22px;
   display: flex;
   flex-wrap: wrap;
@@ -150,7 +150,13 @@ h3 {
   max-height: 144px;
   object-fit: cover;
   margin: 5px;
+  border: 0;
   flex: 1;
+}
+
+.popular {
+  color: rgba(255, 198, 52, 0.836);
+  font-weight: bold;
 }
 
 /* ============== Kart section rules ============== */

@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Menu = (props) => {
   const {
@@ -55,10 +56,14 @@ const Menu = (props) => {
         <p>{menuDescription}</p>
         <div>
           <p>{Number(price).toFixed(2)}€</p>
-          {popular && <p>isGOOOD!</p>}
+          {popular && (
+            <span className="popular">
+              <FontAwesomeIcon icon={["fa", "star"]} /> Popular!
+            </span>
+          )}
         </div>
       </div>
-      <img src={picture} alt="" />
+      {picture && <img src={picture} alt="" />}
     </div>
   );
 };
